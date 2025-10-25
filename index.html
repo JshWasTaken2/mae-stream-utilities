@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaeStream Utilities - StreamElements API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .endpoint {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #fff;
+        }
+
+        .endpoint h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .endpoint p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #ffd700;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            opacity: 0.8;
+        }
+
+        a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .twitch-badge {
+            display: inline-block;
+            background: #9146ff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 MaeStream Utilities</h1>
+        <p class="subtitle">StreamElements Custom API Endpoints for Twitch</p>
+
+        <div class="endpoint">
+            <h2>📝 Random Line API</h2>
+            <p>Retrieves a random line from a Pastebin raw link using '#' as a line separator.</p>
+
+            <span class="label">API Endpoint:</span>
+            <div class="code">/api/random-line?url=PASTEBIN_RAW_URL</div>
+
+            <span class="label">StreamElements Usage:</span>
+            <div class="code">${customapi.YOUR_VERCEL_URL/api/random-line?url=https://pastebin.com/raw/XXXXXX}</div>
+
+            <span class="label">Pastebin Format Example:</span>
+            <div class="code">First line # Second line # Third line # Fourth line</div>
+
+            <p style="margin-top: 15px;">Each API call returns a different random line from your Pastebin.</p>
+        </div>
+
+        <div class="endpoint">
+            <h2>🔧 Example API</h2>
+            <p>A simple example endpoint for testing.</p>
+
+            <span class="label">API Endpoint:</span>
+            <div class="code">/api/example</div>
+
+            <span class="label">StreamElements Usage:</span>
+            <div class="code">${customapi.YOUR_VERCEL_URL/api/example}</div>
+        </div>
+
+        <div class="footer">
+            <p>Add new endpoints by creating .js files in the <code>/api</code> folder</p>
+            <p class="twitch-badge">Built for Twitch & StreamElements</p>
+        </div>
+    </div>
+</body>
+</html>
